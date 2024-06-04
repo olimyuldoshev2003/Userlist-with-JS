@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Cascading Style Sheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./fontawesome-free-6.4.0-web/css/all.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="text_and_btns_add_dark_mode">
+        <h1 class="textHeader">User List</h1>
+        <div class="btns_add_dark_mode">
+          <button class="btnAdd">&plus; <spans>Add</spans></button>
+          <div class="dark_mode_btns">
+            <button class="btnLightMode">Light</button>
+            <button class="btnDarkMode">Dark</button>
+          </div>
+        </div>
+      </div>
+      <div class="filter_and_input__search">
+        <div class="select_filter">
+          <select name="" id="" class="filterStatus">
+            <option value="">All status</option>
+            <option value="true">Active</option>
+            <option value="false">Inactive</option>
+          </select>
+          <select name="" id="" class="filterCities">
+            <option value="">All cities</option>
+            <option value="Dushanbe">Dushanbe</option>
+            <option value="Bokhtar">Bokhtar</option>
+            <option value="Khujand">Khujand</option>
+          </select>
+        </div>
+        <div class="search_input">
+          <input
+            type="search"
+            name=""
+            id=""
+            placeholder="Name, email, etc..."
+            class="searchInput"
+          />
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <table class="table_header">
+        <tr class="rowHeader">
+          <th>Name</th>
+          <th>City</th>
+          <th>Status</th>
+          <th>Phone</th>
+          <th>More</th>
+        </tr>
+      </table>
+      <table class="tableRoot"></table>
+    </section>
+
+    <!-- Modals -->
+
+    <!-- Modal Add -->
+    <dialog class="modalAdd">
+      <div class="text_and_for_closing_modal_add">
+        <h1>Add new</h1>
+        <button class="closeModalAdd">&times;</button>
+      </div>
+      <form action="" class="formModalAdd">
+        <input type="text" name="imageAdd" placeholder=".png / .jpg / .jpeg" />
+        <input type="text" name="nameAdd" id="" placeholder="Name" />
+        <input type="text" name="surnameAdd" id="" placeholder="Surname" />
+        <input type="email" name="emailAdd" id="" placeholder="Email" />
+        <select name="cityAdd" id="">
+          <option value="">Choose city</option>
+          <option value="Dushanbe">Dushanbe</option>
+          <option value="Kulob">Kulob</option>
+          <option value="Bokhtar">Bokhtar</option>
+          <option value="Khujand">Khujand</option>
+          <option value="Hisor">Hisor</option>
+        </select>
+        <select name="statusAdd" id="">
+          <option value="">Choose status</option>
+          <option value="true">Online</option>
+          <option value="false">Offline</option>
+        </select>
+        <input type="number" name="phoneAdd" id="" placeholder="Phone" />
+        <div class="for_btns_add">
+          <button type="submit">Save</button>
+          <button type="reset">Reset</button>
+          <button class="closeModalAddButton">Close</button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- Modal More -->
+    <dialog class="modalMore">
+      <div class="for_closing_modal_more">
+        <button class="closeModalMore">&times;</button>
+      </div>
+      <div class="block_modal_more">
+        <button class="viewModalButton">View Profile</button>
+        <button class="editModalButton">Edit</button>
+        <button class="deleteModalButton">Delete</button>
+      </div>
+    </dialog>
+
+    <!-- Modal View User -->
+
+    <dialog class="modalView">
+      <div class="text_and_for_closing_modal_view">
+        <h1>User info</h1>
+        <button class="closeModalView">&times;</button>
+      </div>
+
+      <div class="block_info_of_chosen_user">
+        <img src="" alt="" class="imgViewUser" />
+        <div class="block_texts_view_user">
+          <h1 class="fullnameViewUser"></h1>
+          <a href="" class="emailViewUser"></a>
+        </div>
+      </div>
+
+      <div class="block_status_city_phone_view_user">
+        <div class="block_city_view_user">
+          <h2>City</h2>
+          <h2 class="cityViewUser"></h2>
+        </div>
+        <div class="block_status_view_user">
+          <h2>Status</h2>
+          <h2 class="statusViewUser"></h2>
+        </div>
+        <div class="block_phone_view_user">
+          <h2>Phone</h2>
+          <h2 class="phoneViewUser"></h2>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Modal Edit -->
+    <dialog class="modalEdit">
+      <div class="text_and_for_closing_modal_edit">
+        <h1>Edit chosen user</h1>
+        <button class="closeModalEdit">&times;</button>
+      </div>
+      <form action="" class="formModalEdit">
+        <input type="text" name="imageEdit" placeholder=".png / .jpg / .jpeg" />
+        <input type="text" name="nameEdit" id="" placeholder="Name" />
+        <input type="text" name="surnameEdit" id="" placeholder="Surname" />
+        <input type="email" name="emailEdit" id="" placeholder="Email" />
+        <select name="cityEdit" id="">
+          <option value="">Choose city</option>
+          <option value="Dushanbe">Dushanbe</option>
+          <option value="Kulob">Kulob</option>
+          <option value="Bokhtar">Bokhtar</option>
+          <option value="Khujand">Khujand</option>
+          <option value="Hisor">Hisor</option>
+        </select>
+        <select name="statusEdit" id="">
+          <option value="">Choose status</option>
+          <option value="true">Online</option>
+          <option value="false">Offline</option>
+        </select>
+        <input type="number" name="phoneEdit" id="" placeholder="Phone" />
+        <div class="for_btns_edit">
+          <button type="submit">Edit</button>
+          <!-- <button type="reset">Reset</button> -->
+          <button class="closeModalEditButton">Close</button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- Modal Delete -->
+    <dialog class="modalDelete">
+      <div class="for_closing_modal_delete">
+        <button class="closeModalDelete">&times</button>
+      </div>
+
+      <div class="for_h2_modal_delete">
+        <h2>You really want to delete this user?</h2>
+      </div>
+
+      <div class="btns_modal_delete">
+        <button class="btnYesModalDelete">Yes</button>
+        <button class="btnNoModalDelete">No</button>
+      </div>
+    </dialog>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
