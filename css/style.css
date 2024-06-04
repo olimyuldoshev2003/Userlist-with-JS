@@ -400,6 +400,7 @@
 .imgViewUser {
   width: 180px;
   height: 180px;
+  border-radius: 50%;
 }
 
 .block_texts_view_user {
