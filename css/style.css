@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 /* HTML Created elements */
 .header {
   display: flex;
@@ -12,6 +16,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
   padding: 0px 40px;
   margin: 0;
 }
@@ -27,6 +33,7 @@
   display: flex;
   align-items: center;
   gap: 33px;
+  flex-wrap: wrap   ;
 }
 
 .btns_add_dark_mode .btnAdd {
@@ -66,6 +73,9 @@
 .filter_and_input__search {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
   padding: 0 40px;
 }
 
@@ -98,14 +108,21 @@
 
 .section {
   margin-top: 40px;
-  max-width: 1440px;
   margin: 0 auto;
   padding: 40px 40px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Table */
+.table {
+  border-collapse: collapse;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .table_header {
-  width: 100%;
-  border-collapse: collapse;
+  max-width: 1440px;
 }
 
 .table_header tr {
@@ -121,13 +138,10 @@
   font-size: 17px;
   font-weight: 600;
   color: #40464c;
+  width: 300px;
 }
 
 /* JS Created elements */
-.tableRoot {
-  width: 100%;
-  /* border-collapse: collapse; */
-}
 
 .tableRoot .rowUsers {
   padding: 40px 40px;
@@ -138,7 +152,6 @@
 
 .tableRoot .rowUsers td {
   text-align: center;
-  width: 20%;
   padding: 8px 10px;
 }
 
@@ -200,7 +213,7 @@
 }
 
 .tableRoot td:nth-child(5) button i {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 /* For Functionals */
@@ -340,7 +353,7 @@
   cursor: pointer;
 }
 
-.block_modal_more button:nth-child(1) {
+/* .block_modal_more button:nth-child(1) {
 }
 
 .block_modal_more button:nth-child(1):hover {
@@ -350,7 +363,7 @@
 }
 
 .block_modal_more button:nth-child(2):hover {
-}
+} */
 
 .block_modal_more button:nth-child(3) {
   color: red;
