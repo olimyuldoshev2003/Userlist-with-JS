@@ -109,7 +109,7 @@
 .section {
   margin-top: 40px;
   margin: 0 auto;
-  padding: 40px 40px;
+  padding: 40px 0px;
   max-width: 100%;
   overflow-x: auto;
 }
@@ -470,7 +470,6 @@
 }
 
 /* Modal Edit */
-
 .modalEdit {
   border: none;
   outline: none;
@@ -553,7 +552,6 @@
 }
 
 /* Modal Delete */
-
 .modalDelete {
   border: none;
   outline: none;
