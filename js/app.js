@@ -343,48 +343,74 @@ closeModalView.onclick = () => {
   modalView.close();
 };
 
-// Search User by Everything
-searchInput.oninput = () => {
-  let searchedUsers;
-  searchedUsers = data.filter((item) => {
-    return item.name.trim().toLowerCase().includes(searchInput.value.trim());
+// // Search User by Everything
+// searchInput.oninput = () => {
+//   let searchedUsers;
+//   searchedUsers = data.filter((item) => {
+//     return item.name.trim().toLowerCase().includes(searchInput.value.trim());
+//   });
+//   getUsers(searchedUsers);
+// };
+
+// //Filter User by Status
+// filterStatus.onclick = () => {
+//   let filteredUserByStatus;
+
+//   filteredUserByStatus = data.filter((item) => {
+//     if (filterStatus.value === "true") {
+//       return item.status === true;
+//     } else if (filterStatus.value === "false") {
+//       return item.status === false;
+//     } else {
+//       return item;
+//     }
+//   });
+//   getUsers(filteredUserByStatus)
+// };
+
+// //Filter User by City
+// filterCities.onclick = () => {
+//   let filteredUserByCity;
+
+//   filteredUserByCity = data.filter((item) => {
+//     if (filterCities.value === "Dushanbe") {
+//       return item.city === "Dushanbe"
+//     } else if (filterCities.value === "Bokhtar") {
+//       return item.city === "Bokhtar"
+//     } else if (filterCities.value === "Khujand") {
+//       return item.city === "Khujand";
+//     } else {
+//       return item
+//     }
+//   })
+
+//   getUsers(filteredUserByCity)
+// }
+
+filterStatus.onchange = applyFilters;
+filterCities.onchange = applyFilters;
+searchInput.oninput = applyFilters;
+
+function applyFilters() {
+  const statusValue = filterStatus.value;
+  const cityValue = filterCities.value;
+  const searchValue = searchInput.value.trim().toLowerCase();
+
+  const filteredUsers = data.filter((item) => {
+    const matchesStatus =
+      statusValue === "" || item.status.toString() === statusValue;
+    const matchesCity = cityValue === "" || item.city === cityValue;
+    const matchesSearch =
+      item.name.trim().toLowerCase().includes(searchValue) ||
+      item.surname.trim().toLowerCase().includes(searchValue) ||
+      item.email.trim().toLowerCase().includes(searchValue) ||
+      item.city.trim().toLowerCase().includes(searchValue) ||
+      item.mobile_phone.toString().includes(searchValue);
+
+    return matchesStatus && matchesCity && matchesSearch;
   });
-  getUsers(searchedUsers);
-};
 
-//Filter User by Status
-filterStatus.onclick = () => {
-  let filteredUserByStatus;
-
-  filteredUserByStatus = data.filter((item) => {
-    if (filterStatus.value === "true") {
-      return item.status === true;
-    } else if (filterStatus.value === "false") {
-      return item.status === false;
-    } else {
-      return item;
-    }
-  });
-  getUsers(filteredUserByStatus)
-};
-
-//Filter User by City
-filterCities.onclick = () => {
-  let filteredUserByCity;
-
-  filteredUserByCity = data.filter((item) => {
-    if (filterCities.value === "Dushanbe") {
-      return item.city === "Dushanbe"
-    } else if (filterCities.value === "Bokhtar") {
-      return item.city === "Bokhtar"
-    } else if (filterCities.value === "Khujand") {
-      return item.city === "Khujand";
-    } else {
-      return item
-    }
-  })
-
-  getUsers(filteredUserByCity)
+  getUsers(filteredUsers);
 }
 
 // Get the users from backend
